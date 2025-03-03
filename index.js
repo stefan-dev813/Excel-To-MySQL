@@ -1,15 +1,14 @@
-// const Excel = require('exceljs');
-// const mysql = require('mysql');
-
 import Excel from 'exceljs';
 import mysql from 'mysql';
+import dotenv from 'dotenv';
+dotenv.config();
 
 // MySQL connection setup
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'fizno_db'
+    host: process.env.HOST_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
 });
 
 
